@@ -1,0 +1,28 @@
+<main class="main-content">
+  <button mat-raised-button class="create_new_post" color="accent" (click)="createPost()">Create new post</button>
+  <div class="single_post"  *ngFor="let post of pagedItems; index as index">
+    <mat-card class="example-card">
+      <div class="spinner spinner_position" *ngIf="deleting && index === currentIndex"></div>
+      <mat-card-header>
+        <mat-card-title>
+          <h1>{{post.title}}</h1>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          {{post.body}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="editPost(post)">EDIT</button>
+        <button mat-button  color="warn" (click)="deletePost(post, index)">DELETE</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <mat-paginator [length]="posts?.length"
+                 [pageSize]="5"
+                 [pageSizeOptions]="[5, 10, 25, 100]"
+                 [hidePageSize]="false"
+                 (page)="pageEvent($event)">
+  </mat-paginator>
+</main>

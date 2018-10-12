@@ -1,0 +1,14 @@
+<main class="main-content">
+  <div class="checkmark spinner_position" *ngIf="saved"></div>
+  <div class="spinner spinner_position" *ngIf="saving"></div>
+  <form [formGroup]="postForm">
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Title" formControlName="title">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <textarea matInput placeholder="Body" formControlName="body" rows="5"></textarea>
+    </mat-form-field>
+    <button mat-raised-button (click)="submit()">Save</button>
+  </form>
+</main>

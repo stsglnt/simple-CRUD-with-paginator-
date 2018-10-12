@@ -1,0 +1,15 @@
+.main-content {
+  width: 800px;
+  margin: 20px auto 0 auto;
+}
+.single_post {
+  margin-bottom: 20px;
+}
+.spinner_position {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.create_new_post {
+  margin-bottom: 10px;
+}

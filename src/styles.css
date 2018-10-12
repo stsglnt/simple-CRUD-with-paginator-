@@ -1,1 +1,67 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+* {
+  padding: 0;
+  margin: 0;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.full-width {
+  width: 100%;
+}
+
+@keyframes spinner--infinite {
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+.spinner {
+  border: 4px solid #579cf3;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  animation: spinner--infinite .8s linear infinite;
+}
+
+.checkmark {
+  height: 20px;
+  width: 20px;
+  position: relative;
+}
+.checkmark:after,
+.checkmark:before {
+  display: block;
+  content: "";
+  width: calc(20px / 12);
+  background-color: red;
+  position: absolute;
+  transform-origin: 0 100%;
+  bottom: 25%;
+  left: calc(35% - 2px);
+}
+.checkmark:before {
+  animation: shortStroke .3s ease forwards;
+  height: 30%;
+  transform: rotate(-45deg);
+}
+.checkmark:after {
+  animation: longStroke .3s ease forwards;
+  height: 80%;
+  transform: rotate(45deg);
+}
+
+@keyframes shortStroke {
+  0% { height: 0% }
+  100% { height: 30% }
+}
+@keyframes longStroke {
+  0% { height: 0% }
+  100% { height: 80% }
+}
+
+.pull-right {
+  float: right;
+}

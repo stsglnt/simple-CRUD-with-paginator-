@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 import {PostsService} from '../posts.service';
 import {FormBuilder, FormGroup} from '@angular/forms';
-import {AppConfig} from '@core/config';
 
 @Component({
   selector: 'app-post-editing',
@@ -17,8 +16,7 @@ export class PostEditingComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private postService: PostsService,
-    private fb: FormBuilder,
-    private router: Router) { }
+    private fb: FormBuilder) { }
 
   ngOnInit() {
     this.initForm();
@@ -56,13 +54,11 @@ export class PostEditingComponent implements OnInit {
     this.saved = false;
     if (this.isNewPost) {
       this.postService.createPost(body).subscribe(res => {
-        // this.router.navigate([AppConfig.routes.posts]);
         this.saving = false;
         this.saved = true;
       });
     } else {
       this.postService.updatePost(body).subscribe(res => {
-        // this.router.navigate([AppConfig.routes.posts]);
         this.saving = false;
         this.saved = true;
       });

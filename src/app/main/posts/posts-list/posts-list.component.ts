@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {Observable} from 'rxjs';
+import {Component, OnInit} from '@angular/core';
 import {IPost} from '@models/post';
 import {PostsService} from '../posts.service';
 import {Router} from '@angular/router';
